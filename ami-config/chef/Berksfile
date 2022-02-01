@@ -1,0 +1,31 @@
+source 'https://supermarket.chef.io'
+
+# Berkshelf does NOT recursively examine component cookbook's Berksfiles but it does
+# examine 'metadata.rb' and tries to resolve it "globally". There is a an extention
+# https://github.com/chrisroberts/berkshelf_ext which could do this. Alternatively
+# the 'chef_api' server can help with name resolution.
+
+def identity_devops(name, version='>=0.0.0', options={})
+  cookbook(name, version, { 
+        git: 'git@github.com:18F/identity-devops',
+        rel: "kitchen/cookbooks/#{name}"
+    }.merge(options))
+end
+
+def load_berksfile(path)
+  berksfile = "#{path}/Berksfile"
+  if File.exists?(berksfile)
+    contents = File.read(berksfile)
+    # comment out lines like `site :opscode`, and 'metadata'
+    #contents = contents.gsub(/(^\s*(site|metadata))/, '#\1')
+    contents = contents.gsub(/^\s*(site|metadata)/, '#\0')
+    instance_eval(contents)
+  end
+end
+
+group :harden_image do
+  cookbook 'os-hardening',  github: 'dev-sec/chef-os-hardening'
+  cookbook 'harden',        path: 'site-cookbooks/harden'
+  # how much of this is duplication? maybe rename?
+  cookbook 'logindotgov',   path: 'site-cookbooks/logindotgov'
+end

@@ -1,0 +1,4 @@
+{
+  "role"        : "jumphost",
+  "chef.recipes": "os-hardening"
+}

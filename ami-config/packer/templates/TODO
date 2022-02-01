@@ -1,0 +1,46 @@
+Conditional statements like this do NOT work currently. All the Provisioner/Builders need to be updated
+to do lazy evaluation like I did for the Puppet masterless.
+
+
+        "launch_block_device_mappings" : [
+            {
+                "device_name"   : "{{user `disk0.device`}}",
+                "volume_size"   : "{{user `disk0.size`}}",
+                "volume_type"   : "{{if eq \"{{user `disk0.type`}}\" \"\"}}{{user `disk.type`}}{{end}}",
+                "encrypted"     : "{{if eq \"{{user `disk0.encrypt`}}\" \"\"}}{{user `disk.encrypt`}}{{end}}",
+                "delete_on_termination" : "{{user `disk0.delete`}}",
+				"no_device"     : false
+            },
+            {
+                "device_name"   : "{{user `disk1.device`}}",
+                "volume_size"   : "{{user `disk1.size`}}",
+                "volume_type"   : "{{if eq \"{{user `disk1.type`}}\" \"\"}}{{user `disk.type`}}{{end}}",
+                "encrypted"     : "{{if eq \"{{user `disk1.encrypt`}}\" \"\"}}{{user `disk.encrypt`}}{{end}}",
+                "delete_on_termination" : "{{user `disk1.delete`}}",
+				"no_device"     : "{{user `disk1.disable`}}"
+            },
+            {
+                "device_name"   : "{{user `disk2.device`}}",
+                "volume_size"   : "{{user `disk2.size`}}",
+                "volume_type"   : "{{if eq \"{{user `disk2.type`}}\" \"\"}}{{user `disk.type`}}{{end}}",
+                "encrypted"     : "{{if eq \"{{user `disk2.encrypt`}}\" \"\"}}{{user `disk.encrypt`}}{{end}}",
+                "delete_on_termination" : "{{user `disk2.delete`}}",
+				"no_device"     : "{{user `disk2.disable`}}"
+            }
+        ],
+
+
+    {
+        "type"          : "ansible",
+        "playbook_file" : "{{user `ansible.basedir`}}/OSCAP/site.yaml",
+        "extra_arguments" : [ "{{if gt \"{{user `debug`}}\" \"1\"}}-vv{{end}}", "--skip-tags=grub,bootloader,rescue,sudoers" ]
+    }
+
+        "type"          : "ansible",
+        "ansible_env_vars": [ <<< rename to environment_vars, nicer if it was just 'environment' across the board
+            "ANSIBLE_FOO=https://docs.ansible.com/ansible/latest/reference_appendices/config.html?highlight=environment"
+        ],
+        "playbook_file" : "{{user `ansible.basedir`}}/OSCAP/site.yaml",
+        "extra_arguments" : [ "--skip-tags=grub,bootloader,rescue,sudoers" ]
+    }
+

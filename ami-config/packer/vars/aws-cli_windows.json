@@ -1,0 +1,8 @@
+{
+  "aws-cli.label"   : "'AWS Command Line Interface'",
+  "aws-cli.version" : "latest",
+  "aws-cli.arch"    : "x86_64",
+  "aws-cli.url"     : "'https://s3.amazonaws.com/aws-cli/AWSCLI64PY3.msi'",
+  "aws-cli.fetch.args"   : "''",
+  "aws-cli.install.args" : "''"
+}

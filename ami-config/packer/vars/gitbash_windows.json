@@ -1,0 +1,7 @@
+{
+  "gitbash.label"   : "FIXME",
+  "gitbash.version" : "2.19.2",
+  "gitbash.arch"    : "x86_64",
+  "gitbash.url"     : "https://github.com/git-for-windows/git/releases/download/v2.19.2.windows.1/Git-2.19.2-64-bit.exe",
+  "gitbash.install.args" : "/nocancel, /norestart, /silent"
+}

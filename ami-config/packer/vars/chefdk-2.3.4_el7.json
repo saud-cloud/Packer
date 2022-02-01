@@ -1,0 +1,6 @@
+{
+  "chefdk.version"  : "2.3.4",
+  "chefdk.url"      : "https://packages.chef.io/files/stable/chefdk/2.3.4/el/7/chefdk-2.3.4-1.el7.x86_64.rpm",
+  "chefdk.sha256"   : "f7cceebb486b0e150e1d5fb1e298045520733ab83cec41f30d1c22427da5cfa7",
+  "chef.version"    : "13.4.19"
+}

@@ -1,0 +1,6 @@
+{
+  "ansible.version" : "FIXME",
+  "ansible.arch"    : "x86_64",
+  "ansible.url"     : "https://FXIME",
+  "ansible.install.args" : "FIXME"
+}

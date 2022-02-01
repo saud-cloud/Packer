@@ -1,0 +1,8 @@
+{
+  "microsoft-sccm.label"    : "'Microsoft SCCM'",
+  "microsoft-sccm.version"  : "2012.1802",
+  "microsoft-sccm.url"      : "'s3://dot-newserverinstall/SCCM2012_Client_1802/'",
+  "microsoft-sccm.install"  : "'./ccmsetup.bat'",
+  "microsoft-sccm.fetch.args"    : "''",
+  "microsoft-sccm.install.args"  : "''"
+}

@@ -1,0 +1,6 @@
+{
+  "chefdk.version"  : "2.3.4",
+  "chefdk.url"      : "https://packages.chef.io/files/stable/chefdk/2.3.4/debian/8/chefdk_2.3.4-1_amd64.deb",
+  "chefdk.sha256"   : "a81a4fdd4ef78f6e61577b1eb16bc812d39f060c9d4c6ea163c2aa305d62cf33",
+  "chef.version"    : "13.4.19"
+}

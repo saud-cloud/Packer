@@ -1,0 +1,8 @@
+Reference
+ https://github.com/ansible/ansible/tree/devel/lib/ansible/plugins/connection/
+   or
+ PYTHON_LIB_DIR: /usr/lib/python2.7/site-packages/ansible/plugins/connection/
+
+'packer.py' is a tiny change from standard 'ssh.py'
+
+Ansible machine must(?) have Python module 'pywinrm' installed.

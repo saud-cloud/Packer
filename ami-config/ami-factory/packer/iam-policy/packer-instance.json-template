@@ -1,0 +1,145 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "wildcardReadOnly",
+            "Action": [
+                "ec2:DescribeSubnets",
+                "ec2:DescribeSnapshots",
+                "ec2:DescribeImages",
+                "ec2:DescribeVolumes",
+                "ec2:DescribeInstances",
+                "ec2:DescribeImageAttribute",
+                "ec2:DescribeInstanceStatus",
+                "ec2:DescribeRegions",
+                "ec2:DescribeTags",
+                "ec2:DescribeSecurityGroups",
+                "sts:DecodeAuthorizationMessage"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Sid": "wildcardWrite",
+            "Action": [
+                "ec2:CreateImage",
+                "ec2:CopyImage",
+                "ec2:RegisterImage",
+                "ec2:DeregisterImage",
+                "ec2:CreateKeyPair",
+                "ec2:DeleteKeyPair",
+                "ec2:CreateSecurityGroup",
+                "ec2:CreateSnapshot",
+                "ec2:CreateTags",
+                "ec2:CreateVolume",
+                "ec2:ModifyImageAttribute",
+                "ec2:ModifyInstanceAttribute",
+                "ec2:GetPasswordData"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Sid": "InstanceDisk",
+            "Action": [
+                "ec2:DeleteVolume",
+                "ec2:ModifySnapshotAttribute",
+                "ec2:DeleteSnapshot",
+                "ec2:RebootInstances",
+                "ec2:TerminateInstances",
+                "ec2:StopInstances"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:ec2:*:*:snapshot/*",
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:volume/*"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/owner": "Packer.IO"
+                }
+            }
+        },
+        {
+            "Sid": "ManageSecurityGroups",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:DeleteSecurityGroup"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringLike": {
+                    "ec2:Vpc": "arn:aws:ec2:*:*:vpc/$VPC_ID"
+                },
+                "StringEquals": {
+                    "ec2:ResourceTag/owner": "Packer.IO"
+                }
+            }
+	},
+        {
+            "Sid": "IAMPassroleToInstance",
+            "Action": [
+                "iam:PassRole"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:iam::$ACCOUNT_ID:role/ami-builder"
+        },
+        {
+            "Sid": "VolumeActions",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AttachVolume",
+                "ec2:DetachVolume"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:volume/*"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/owner": "Packer.IO"
+                },
+                "StringLikeIfExists": {
+                    "ec2:Vpc": "arn:aws:ec2:*:*:vpc/$VPC_ID"
+                }
+            }
+        },
+        {
+            "Sid": "RunInstances",
+            "Effect": "Allow",
+            "Action": "ec2:RunInstances",
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:key-pair/*"
+            ]
+        },
+        {
+            "Sid": "RunInstancesNetwork",
+            "Effect": "Allow",
+            "Action": "ec2:RunInstances",
+            "Resource": [
+                "arn:aws:ec2:*:*:subnet/*",
+                "arn:aws:ec2:*:*:network-interface/*",
+                "arn:aws:ec2:*:*:security-group/*"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "ec2:Vpc": "arn:aws:ec2:*:*:vpc/$VPC_ID"
+                }
+            }
+        },
+        {
+            "Sid": "RunInstanceDisk",
+            "Effect": "Allow",
+            "Action": "ec2:RunInstances",
+            "Resource": [
+                "arn:aws:ec2:*:*:image/*",
+                "arn:aws:ec2:*:*:volume/*",
+                "arn:aws:ec2:*:*:snapshot/*"
+            ]
+        }
+    ]
+}

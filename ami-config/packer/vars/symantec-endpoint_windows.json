@@ -1,0 +1,7 @@
+{
+  "symantec-endpoint.label"     : "'Symantec Endpoint Protection'",
+  "symantec-endpoint.version"   : "14.2",
+  "symantec-endpoint.url"       : "'https://s3.amazonaws.com/dot-newserverinstall/SEP-14.2415.0200-MP2+with+IPS+No+Restart/SEP-v14mp2-x64-setup.exe'",
+  "symantec-endpoint.fetch.args"    : "''",
+  "symantec-endpoint.install.args"  : "''"
+}

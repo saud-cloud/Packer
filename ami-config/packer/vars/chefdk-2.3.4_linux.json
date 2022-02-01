@@ -1,0 +1,7 @@
+{
+  "chefdk.version"  : "2.3.4",
+  "chefdk.url_base" : "https://packages.chef.io/files/stable/chefdk",
+CAN'T DO THIS HERE!! Only in the final template. Consider this a YAML placeholder for tag merging in a pre-processor
+  "chefdk.url"      : "{{user `chefdk.url_base`}}/{{user `chefdk.version`}}/{{user `os.family`}}/{{user `os.family_ver`}}/chefdk_{{user `chefdk.version`}}-1_{{user `os.arch`}}.{{user `os.pkg_suffix`}}",
+  "chef.version"    : "13.4.19"
+}

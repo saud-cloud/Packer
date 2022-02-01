@@ -1,0 +1,5 @@
+This is a collection of (site-)cookbooks. Git repo 'ami-config' should submodule this
+as CHEF_BASE/site-cookbooks and then use Berkshelf to further vendor/version them.
+
+The customary practice is for every Chef cookbook to be it's own repo but that can be
+cumbersome or impossible in some situations.

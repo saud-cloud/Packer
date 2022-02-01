@@ -1,0 +1,17 @@
+{
+    "aws_access_key": "",
+    "aws_secret_key": "",
+    "aws_region": "us-west-2",
+    "encryption": "false",
+    "root_vol_size": "100",
+    "var_vol_size": "20",
+    "var_log_vol_size": "100",
+    "var_log_audit_vol_size": "20",
+    "home_vol_size": "10",
+    "tmp_vol_size": "100",
+    "security_group_id": "sg-d64de5ab",
+    "vpc_id": "vpc-e5790083",
+    "subnet_id": "subnet-d565c99d",
+    "deregister_existing_ami": "false",
+    "delete_ami_snapshots": "false"
+  }

@@ -1,0 +1,19 @@
+<powershell>
+netsh advfirewall firewall add rule name="WinRM-HTTP" dir=in localport=5985 protocol=TCP action=allow
+netsh advfirewall firewall add rule name="WinRM-HTTPS" dir=in localport=5986 protocol=TCP action=allow
+winrm quickconfig -transport:http -force
+winrm set winrm/config/service '@{AllowUnencrypted="true"}'
+#alt: Set-Item -Path WSMan:/localhost/Service/AllowUnencrypted -Value $TRUE
+winrm set winrm/config/service/auth '@{Basic="true"}'
+#alt: Set-Item -Path WSMan:/localhost/Service/Auth/Basic -Value $TRUE
+winrm enumerate winrm/config/listener
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force
+
+# Configure UAC to allow privilege elevation in remote shells
+$Key = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System'
+Set-ItemProperty -Path $Key -Name LocalAccountTokenFilterPolicy -Value 1 -Force
+
+# Disable UAC (bad idea)
+#Set-ItemProperty -Path $Key -Name EnableLUA -Value 0 -Force
+</powershell>

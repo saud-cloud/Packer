@@ -1,0 +1,32 @@
+{
+  "chefdk.version"  : "latest",
+  "chefdk.url"	    : "https://packages.chef.io/files/stable/chefdk",
+#  "chefdk.url_base" : "https://packages.chef.io/files/stable/chefdk",
+#  "chefdk.url"      : "{{user `chefdk.url_base`}}/{{user `chefdk.version`}}/{{user `os.family`}}/{{user `os.repo.version`}}/chefdk_{{user `chefdk.version`}}-1_{{user `os.arch`}}{{user `pkg.suffix`}}",
+  "chefdk.sha256    : "...",
+  "chef.version"    : "x.y.z"
+}
+
+# grab <file>.metadata.json
+#
+
+  "basename": "chefdk-2.3.4-1.el6.x86_64.rpm",
+  "md5": "7e3df3fb39b07c8fb688cbf8c70a9c2f",
+  "sha1": "d7b9cd061d89965d5a31f43512edfc5c6f5ca2b8",
+  "sha256": "56b160e8a45b776c06d1eb9f06b79b6000623e4d4b9d08100f9fecf9c0ff4a87",
+  "sha512": "d9b0a121a2d8db2b02ed88142034bc02495195faae2d957a701109e774b8502e1ed752a9b52194b0e58b3dc5b79ad905d1a3447b76eb7610664b32ca2d62db33",
+  "platform": "el",
+  "platform_version": "6",
+  "arch": "x86_64",
+
+  "platform": "ubuntu",
+  "platform_version": "12.04",
+  "arch": "x86_64",
+  "name": "chef",
+  "friendly_name": "Chef Client",
+  "homepage": "https://www.chef.io",
+  "version": "12.15.19",
+  "iteration": 1,
+
+  "platform": "debian",
+  "platform_version": "7",

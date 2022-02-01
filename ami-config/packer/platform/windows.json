@@ -1,0 +1,17 @@
+{
+  "os.kernel"       : "windows",
+  "os.family"       : "windows",
+  "os.pkg.cmd"      : "msiexec.exe",
+  "os.pkg.suffix"   : ".msi",
+  "os.repo"         : "",
+  "os.repo.cmd"     : "",
+  "os.repo.version" : "",
+  "os.tmpdir"       : "/windows/temp",
+  "os.vendor"       : "Microsoft",
+
+  "disk0.device"    : "/dev/sda1",
+  "disk1.device"    : "/dev/sdf",
+
+  "image.login"     : "Administrator"
+}
+

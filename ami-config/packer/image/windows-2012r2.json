@@ -1,0 +1,11 @@
+{
+  "image.id"    : "",
+  "image.name"  : "Windows_Server-2012-R2_RTM-English-64Bit-Base-*",
+  "image.owner" : "801119661308",
+  "image.virt"  : "hvm",
+
+  "os.release"  : "2012",
+  "os.codename" : "",
+  "os.arch"     : "x86_64"
+}
+

@@ -1,0 +1,8 @@
+{
+  "trendmicro-serverprotect.label"      : "'TrendMicro ServerProtect'",
+  "trendmicro-serverprotect.help"       : "'http://downloadcenter.trendmicro.com/index.php?clk=tbl&clkval=111&regs=NABU&lang_loc=1'",
+  "trendmicro-serverprotect.version"    : "11.0",
+  "trendmicro-serverprotect.url"        : "'https://s3.amazonaws.com/dot-newserverinstall/TrendMicro/Redhat/Agent-Core-RedHat_EL6-11.0.0-439.x86_64.rpm'",
+  "trendmicro-serverprotect.fetch.args"     : "",
+  "trendmicro-serverprotect.install.args"   : ""
+}

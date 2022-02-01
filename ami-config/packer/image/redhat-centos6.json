@@ -1,0 +1,14 @@
+{
+  "image.id"    : "",
+  "image.name"  : "CentOS Linux 6 x86_64 HVM EBS *",
+  "image.owner" : "679593333241",
+  "image.login" : "ec2-user",
+  "image.virt"  : "hvm",
+
+  "os.vendor"   : "CentOS",
+  "os.release"  : "6.x",
+  "os.codename" : "",
+  "os.arch"     : "x86_64",
+  "os.repo.version" : "6"
+}
+

@@ -1,0 +1,7 @@
+{
+  "ansible"
+  {
+    "basedir"	: "some_path",
+    "version" 	: ""
+  }
+}

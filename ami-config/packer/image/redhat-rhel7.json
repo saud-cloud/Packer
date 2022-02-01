@@ -1,0 +1,14 @@
+{
+  "image.id"   : "",
+  "image.name"  : "RHEL-7.?_HVM_GA-*-x86_64-*",
+  "image.owner" : "309956199498",
+  "image.login" : "ec2-user",
+  "image.virt"  : "hvm",
+
+  "os.vendor"   : "Red Hat",
+  "os.release"  : "7.x",
+  "os.codename" : "maipo",
+  "os.arch"     : "x86_64",
+  "os.repo.version" : "7"
+}
+

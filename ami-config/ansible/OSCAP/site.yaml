@@ -1,0 +1,74 @@
+---
+- hosts: all
+  vars:
+    #TODO
+    # future trickery to allow playbooks in sub-directory but
+    # not lose access to TLD group/host_vars.
+    basedir: "{{ playbook_dir }}"
+    factory_basedir: lookup('env', 'FACTORY_BASEDIR')
+
+  tasks:
+    - group_by:
+        key: "{{ ansible_facts['os_family'] ~ ansible_facts['distribution_major_version'] }}"
+        # TODO distro_major_version for distro==Amazon is 'NA' so use a default?
+        parents:
+          #- "{{ ansible_facts['distribution'] ~ ansible_facts['distribution_major_version'] }}"
+          - "{{ ansible_facts['distribution'] }}"
+          #- ansible_facts['os_family']
+          # NOTE! distro == osfamily causes duplicate parent Error. (eg. actual RedHat, Debian)
+          # 'WHEN' conditional not supported in 'group_by' statement.
+          # distribution ::= Microsoft-Windows-Server-2016-Datacenter
+
+- hosts: RedHat6
+  gather_facts: false
+  become: yes
+  tasks:
+    - import_role:
+        name: RHEL6-STIG
+      vars:
+
+- hosts: RedHat7
+  gather_facts: false
+  become: yes
+  tasks:
+    - import_role:
+        name: RHEL7-STIG
+      vars: # alternate
+        #rhel7stig_cat1: "{{ apply_cat1 }}"
+        #rhel7stig_cat2: "{{ apply_cat2 }}"
+        #rhel7stig_cat3: "{{ apply_cat3 }}"
+
+#TODO win2012 = 6.2, 2008=6.0,6.1
+- hosts: 
+    - Windows6
+    - Windows10
+  gather_facts: false
+  vars_files:  # maintain filenames/symlinks or else
+#    - group_vars/Windows.yaml
+#  become: yes
+  tasks:
+#FIXME hard-coded to 127.0.0.1?
+#    - win_whoami:
+#    - win_updates:
+#        category_names: 
+#          - SecurityUpdates
+#          - CriticalUpdates
+#      register: windows_update
+#    - win_reboot:
+#      when: windows_update.reboot_required
+    - import_role:
+        name: dev-sec.windows
+        #Win2012-member-STIG
+      vars:
+
+
+# This doesn't work except in 'ansible --connection-local' because
+# facts are collected from the remote host and the values being referenced
+# are only defined on the node running Ansible. DUH!
+#    - set_fact:
+#        basedir: "{{ playbook_dir }}"
+# TODO can't pass this in via '--extra-vars "factory_basedir=<path>' from Packer
+# because it's retarded and doesn't process --extra_vars et. al. as a Template
+#        factory_basedir: lookup('env', 'FACTORY_BASEDIR')
+#
+# https://medium.com/@jezhalford/ansible-custom-facts-1e1d1bf65db8

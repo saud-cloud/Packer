@@ -1,0 +1,7 @@
+{
+  "aws-inspector.label"     : "'AWS (Inspector) Agent'",
+  "aws-inspector.version"   : "latest",
+  "aws-inspector.url"       : "'https://inspector-agent.amazonaws.com/windows/installer/latest/AWSAgentInstall.exe'",
+  "aws-inspector.fetch.args": "''",
+  "aws-inspector.install.args" : "'/install', '/passive', '/norestart'"
+}

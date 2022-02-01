@@ -1,0 +1,6 @@
+{
+  "role" :  "worker",
+  "root_vol-size": 8,
+  "chef_runlist" : "one, two",
+  "recipes" : "one,two"
+}
