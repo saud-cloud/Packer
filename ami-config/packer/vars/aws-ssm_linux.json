@@ -1,5 +1,0 @@
-{
-  "aws-ssm.version" : "latest",
-  "aws-ssm.url"     : "https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm",
-  "aws-ssm.helpdoc" : "https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html"
-}

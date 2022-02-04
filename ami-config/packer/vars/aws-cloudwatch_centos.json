@@ -1,5 +1,0 @@
-{
-  "cloudwatch.version"  : "latest",
-  "cloudwatch.arch"     : "amd64",
-  "cloudwatch.url"      : "https://s3.amazonaws.com/amazoncloudwatch-agent/centos/amd64/latest/amazon-cloudwatch-agent.rpm"
-}

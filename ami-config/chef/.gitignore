@@ -1,9 +1,0 @@
-.DS_Store
-vendor
-cookbooks
-
-Gemfile.lock
-Berksfile.lock
-
-.bundle
-*~

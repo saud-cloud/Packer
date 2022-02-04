@@ -1,5 +1,0 @@
-*	text=auto
-*.txt	text
-*.sh	text eol=lf
-*.pl	text eol=lf
-*.py*	text eol=lf

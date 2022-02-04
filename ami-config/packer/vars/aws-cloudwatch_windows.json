@@ -1,8 +1,0 @@
-{
-  "aws-cloudwatch.label"    : "'Amazon CloudWatch Agent'",
-  "aws-cloudwatch.version"  : "latest",
-  "aws-cloudwatch.arch"     : "amd64",
-  "aws-cloudwatch.url"      : "'https://s3.amazonaws.com/amazoncloudwatch-agent/windows/amd64/latest/amazon-cloudwatch-agent.msi'",
-  "aws-cloudwatch.fetch.args"   : "''",
-  "aws-cloudwatch.install.args"   : "''"
-}

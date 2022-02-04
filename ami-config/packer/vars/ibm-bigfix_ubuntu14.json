@@ -1,7 +1,0 @@
-{
-  "ibm-bigfix.label"        : "'IBM BigFix Client'",
-  "bigfix.agent.version"	: "9.5.8",
-  "bigfix.agent.url"    	: "http://software.bigfix.com/download/bes/95/BESAgent-9.5.8.38-ubuntu10.amd64.deb",
-  "ibm-bigfix.fetch.args"   : "''",
-  "ibm-bigfix.install.args" : "''"
-}

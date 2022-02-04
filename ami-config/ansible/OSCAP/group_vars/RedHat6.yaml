@@ -1,8 +1,0 @@
----
-rhel6stig_cat1: "{{ apply_cat1 }}"
-rhel6stig_cat2: "{{ apply_cat2 }}"
-rhel6stig_cat3: "{{ apply_cat3 }}"
-rhel6stig_login_banner: "{{ login_banner }}"
-rhel6stig_update_all_packages: "{{ package.update_all }}"
-rhel6stig_bootloader_password: "{{ bootloader.password }}"
-

@@ -1,7 +1,0 @@
-{
-  "chefdk.version"  : "1.6.11",
-  "chefdk.url_base" : "https://packages.chef.io/files/stable/chefdk",
-  "chefdk.url"      : "{{user `chefdk.url_base`}}/{{user `chefdk.version`}}/{{user `os.family`}}/{{user `os.repo.version`}}/chefdk_{{user `chefdk.version`}}-1_{{user `os.arch`}}{{user `pkg.suffix`}}",
-  "chefdk.sha256"   : "cc87913849e6ca9e6f930dd0d7f393d91c3031f2da145a23f30617e2ff7de2c4",
-  "chef.version"    : "12.21.26"
-}

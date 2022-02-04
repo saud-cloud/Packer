@@ -1,7 +1,0 @@
-{
-  "aws-inspector.version"   : "latest",
-  "aws-inspector.url"       : "https://inspector-agent.amazonaws.com/linux/latest/install",
-  "aws-inspector.install" 	: "curl url | sudo bash install",
-  "aws-inspector.helpdoc"	: "https://docs.aws.amazon.com/inspector/latest/userguide/inspector_installing-uninstalling-agents.html",
-  "aws-inspector.packages"  : [ "libcurl3/4", "libgcc(1)", "libc6", "libstdc++6", "libssl", "libpcap" ]
-}

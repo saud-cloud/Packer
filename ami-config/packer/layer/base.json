@@ -1,5 +1,0 @@
-{
-  "layer"       : "base",
-  "disk1.size"  : "8",
-  "chef.recipes": "os-hardening"
-}

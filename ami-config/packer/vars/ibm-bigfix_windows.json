@@ -1,7 +1,0 @@
-{
-  "ibm-bigfix.label"        : "'IBM BigFix Client'",
-  "ibm-bigfix.version"      : "9.5.8",
-  "ibm-bigfix.url"          : "'http://software.bigfix.com/download/bes/95/BigFix-BES-Client-9.5.8.38.exe', 'https://s3.amazonaws.com/dot-newserverinstall/BES+Client/Windows/masthead.afxm'",
-  "ibm-bigfix.fetch.args"   : "''",
-  "ibm-bigfix.install.args" : "''"
-}

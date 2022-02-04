@@ -1,6 +1,0 @@
-{
-  "instance.region"     : "us-east-1",
-  "net.container"       : "vpc-09226a292c2a00415",
-  "net.subnet"          : "subnet-0e7b46e23aa7a75f5",
-  "net.security_groups" : "sg-0fe537d2abe9e451c,sg-055ac83253af79fef"
-}

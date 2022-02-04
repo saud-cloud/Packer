@@ -1,6 +1,0 @@
-stolen from https://github.com/binxio/generate-temp-aws-credentials
-
-put rest of IAM rules, S3 references etc. to create VPC, SG, NATgw etc
-
-Not a bad idea to use https://github.com/gruntwork-io/module-security/blob/master/modules/os-hardening/ami-builder/main.tf
-and TF to just run the entire thing including the end-to-end build, test, publish

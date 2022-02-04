@@ -1,6 +1,0 @@
-{
-  "hid-activclient.label"   : "'HID ActivClient'",
-  "hid-activclient.vendor"  : "HID Global",
-  "hid-activclient.version" : "7.1",
-  "hid-activclient.url"     : "'https://s3.amazonaws.com/dot-newserverinstall/ActivClient_7.1_6432_w_Hotfix_v159_Jan_2017_Servers/ActivID+ActivClient+x64+7.1.msi'"
-}

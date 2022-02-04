@@ -1,8 +1,0 @@
-{
-  "aws-ssm.label"   : "'Amazon Systems Manager Agent'",
-  "aws-ssm.version" : "latest",
-  "aws-ssm.arch"    : "amd64",
-  "aws-ssm.url"     : "'https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/windows_amd64/AmazonSSMAgentSetup.exe'",
-  "aws-ssm.fetch.args"   : "''",
-  "aws-ssm.install.args"   : "''"
-}

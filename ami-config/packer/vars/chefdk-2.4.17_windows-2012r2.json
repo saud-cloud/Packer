@@ -1,6 +1,0 @@
-{
-  "chefdk.version"  : "2.4.17",
-  "chefdk.url"      : "https://packages.chef.io/files/stable/chefdk/2.4.17/windows/2012r2/chefdk-2.4.17-1-x64.msi",
-  "chefdk.sha256"   : "d46f1636089bb3883245db44256e179ff353c998f7f280db222daf504a78033f",
-  "chef.version"    : "13.4.24"
-}

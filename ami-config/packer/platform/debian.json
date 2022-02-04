@@ -1,8 +1,0 @@
-{
-  "os.family"       : "Debian",
-  "os.pkg.cmd"      : "dpkg -i",
-  "os.pkg.suffix"   : ".deb",
-  "os.repo"         : "debian",
-  "os.repo.cmd"     : "apt-get"
-}
-
